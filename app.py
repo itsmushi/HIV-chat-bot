@@ -30,14 +30,23 @@ def ask():
         else:
             ans="Tafadhali uliza kwa namna nyingine"
     #sababu za ukimwi
-    elif( ( re.search("pat",qn) or re.search("sabab",qn) ) and ( re.search("ukimwi",qn) or re.search("vvu",qn) )): 
+    elif( ( re.search("pat",qn) or re.search("sabab",qn) or re.search("ambukiz",qn) ) and ( re.search("ukimwi",qn) or re.search("vvu",qn) )): 
         ans="Ukimwi unaambukizwa kwa kuchangia vitu vya ncha kali na kwa kujamiiana"
 
+    #kinga ya ukimwi
     elif(re.search("king",qn) or re.search("zui",qn) or re.search("epuk",qn) ):
         ans="Kujikinga na Ukimwi tumia sheria ya ABC"
-    #
+    
+    #dalili za ukimwi
+    elif( ( re.search("dalil",qn) or re.search("ju",qn) ) and ( re.search("ukimwi",qn) or re.search("vvu",qn) ) ):
+        ans="Dalili za Ukimwi ni kupungua uzito sana na kupata magonjwa kirahisi"
+    #no answer
+    else:
+        ans="Samahani hakuna jibu kwa swali lako kwa sasa"
 
     # ans=qa[qn]
     return ans
     # question=request.get_json()["question"].lower().replace("?","").strip()
     # return qa[question]
+
+    
